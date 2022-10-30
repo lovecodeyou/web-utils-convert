@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a6f355b0-592d-4ab7-934b-b5089b8854d0" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/common/List.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/common/OffsetToLocation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/common/SyntaxError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/common/TokenStream.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/definition-syntax/SyntaxError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/definition-syntax/parse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/definition-syntax/tokenizer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/definition-syntax/walk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/generator/sourceMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/lexer/Lexer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/lexer/match-graph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/lexer/match.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/lexer/prepare-tokens.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/lexer/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/lexer/structure.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/lexer/trace.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/parser/sequence.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/syntax/config/lexer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/syntax/config/mix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/syntax/config/parser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/syntax/config/walker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/tokenizer/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/utils/names.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/css-tree/lib/walker/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dagre-d3/dist/demo/tipsy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dagre-d3/node_modules/d3-format/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dagre-d3/node_modules/d3-format/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSS.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSS.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSParser.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSParser.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSRule.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSRule.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSRuleTypeEnum.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSRuleTypeEnum.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSStyleSheet.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSStyleSheet.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSUnitValue.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSUnitValue.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSUnits.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/CSSUnits.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/MediaList.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/MediaList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/css/MediaList.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/DataTransfer.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/DataTransfer.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/DataTransferItem.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/DataTransferItem.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/DataTransferItemList.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/DataTransferItemList.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/Event.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/Event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/Event.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/EventTarget.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/EventTarget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/EventTarget.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IEventInit.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IEventInit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IEventInit.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IEventListener.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IEventListener.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IEventListener.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IEventTarget.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IEventTarget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IEventTarget.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IUIEventInit.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/IUIEventInit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/NonImplementedEventTypes.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/NonImplementedEventTypes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/NonImplementedEventTypes.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/event/UIEvent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/Blob.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/Blob.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/File.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/File.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/File.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReader.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReader.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReaderEventTypeEnum.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReaderEventTypeEnum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReaderEventTypeEnum.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReaderFormatEnum.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReaderFormatEnum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReaderFormatEnum.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReaderReadyStateEnum.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReaderReadyStateEnum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/FileReaderReadyStateEnum.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/IBlob.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/IBlob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/happy-dom/lib/file/IBlob.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/DllEntryDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyAcceptImportDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyCompatibilityDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyDetectionParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyExportDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyExportExpressionDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyExportHeaderDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyExportImportedSpecifierDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyExportSpecifierDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyImportDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyImportSideEffectDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyImportSpecifierDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyModulesPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/HarmonyTopLevelThisParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/ImportContextDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/ImportDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/ImportEagerDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/ImportPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/ImportWeakDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/LoaderDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/LoaderPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/LocalModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/LocalModulesHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/ModuleDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/ModuleHotAcceptDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/ModuleHotDeclineDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/MultiEntryDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/NullDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/PrefetchDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireContextDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireContextPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireEnsureDependenciesBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireEnsureDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireEnsurePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireHeaderDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireIncludeDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireIncludeDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireIncludePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireResolveContextDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireResolveDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireResolveDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/RequireResolveHeaderDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/SingleEntryDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/SystemPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/UnsupportedDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/WebAssemblyExportImportedDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/WebpackMissingModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/webpack/lib/dependencies/getFunctionExpression.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+    <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="G:\Maven\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../Maven/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="G:\Maven\apache-maven-3.8.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_HOME" />
+  </component>
+  <component name="ProjectId" id="2GqjIVM23ZCtoaXcDN62TnANAzf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "G:/VsCode/WorkSpace/MyProject/web-utils-convert/src/lib",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "I:\\开发\\IDEA2022_2\\IntelliJ IDEA 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\VsCode\WorkSpace\MyProject\web-utils-convert\src\lib" />
+      <recent name="G:\VsCode\WorkSpace\MyProject\web-utils-convert\src" />
+      <recent name="G:\VsCode\WorkSpace\MyProject\web-utils-convert\src\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\VsCode\WorkSpace\MyProject\web-utils-convert\src\test-npminstall" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6f355b0-592d-4ab7-934b-b5089b8854d0" name="Changes" comment="" />
+      <created>1667122930318</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667122930318</updated>
+      <workItem from="1667122931608" duration="13325000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1667158562909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667158562909</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <created>1667158580416</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667158580416</updated>
+    </task>
+    <task id="LOCAL-00003" summary="init">
+      <created>1667158852537</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667158852537</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+</project>

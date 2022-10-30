@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/lib/mermaid.js"></script>
+    <script>
+        setTimeout(function () {
+            mermaid.initialize({startOnLoad:true, theme: 'forest'});
+        },2000)
+    </script>
+</head>
+<!-- <body> -->
+<!-- Here is one mermaid diagram: -->
+<!-- <div class="mermaid"> -->
+<!--     graph TD;  A[Client] &ndash;&gt; B[Load Balancer]; B &ndash;&gt; C[Server1]; B &ndash;&gt; D[Server2]; -->
+<!-- </div> -->
+
+
+<!-- <div class="mermaid"> -->
+<!--     graph TD -->
+<!--     A&#45;&#45;&gt;B -->
+<!--     A&#45;&#45;&gt;C -->
+<!--     B&#45;&#45;&gt;D -->
+<!--     C&#45;&#45;&gt;D -->
+<!-- </div> -->
+
+
+<!-- And here is another: -->
+<!-- <div class="mermaid"> -->
+<!--     graph TD -->
+<!--     A[Client] &ndash;&gt;|tcp_123| B -->
+<!--     B(Load Balancer) -->
+<!--     B &ndash;&gt;|tcp_456| C[Server1] -->
+<!--     B &ndash;&gt;|tcp_456| D[Server2] -->
+<!-- </div> -->
+<!-- </body> -->
+
+
+<body><nav class="table-of-contents"><ol><li><a href="#%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF%E4%BB%A5%E5%8F%8A%E6%80%9D%E8%B7%AF"> 项目背景以及思路</a></li><li><a href="#%E6%8A%80%E6%9C%AF%E6%A0%88"> 技术栈</a></li><li><a href="#%E5%9C%A8%E7%BA%BF%E6%BC%94%E7%A4%BA"> 在线演示</a></li><li><a href="#%E7%95%8C%E9%9D%A2"> 界面</a><ol><li><a href="#%E7%9F%AD%E9%93%BE%E7%94%9F%E6%88%90%E5%99%A8"> 短链生成器</a></li><li><a href="#%E5%9B%BE%E5%BA%8A"> 图床</a></li></ol></li><li><a href="#%E9%83%A8%E7%BD%B2"> 部署</a><ol><li><a href="#idea%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95"> IDEA开发调试</a></li><li><a href="#%E6%9C%8D%E5%8A%A1%E5%99%A8"> 服务器</a></li></ol></li></ol></nav><h2 id="%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF%E4%BB%A5%E5%8F%8A%E6%80%9D%E8%B7%AF" tabindex="-1"><a class="header-anchor" href="#%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF%E4%BB%A5%E5%8F%8A%E6%80%9D%E8%B7%AF">§</a> 项目背景以及思路</h2>
+<ol>
+    <li><strong>项目背景</strong></li>
+</ol>
+<blockquote>
+    <p>有些文章的链接太长（比如微信推文、github的仓库文章），但是又需要分享给出去，这时候就需要短链一下，然后分享给朋友，国内的短链都需要审核域名实属麻烦，所以写一个方便自己</p>
+</blockquote>
+<p> 
+    2. <strong>项目思路（更多细节自行去仓库看源码）</strong>
+    + <em><strong>短链生成器：</strong></em> 用户在界面填写一个需要短链的链接，然后后台判断链接是否是http、或者https链接，如果符合则生成一个结构是【个人服务器的IP:项目端口号/UUID】，存入缓存（1天时间），并且持久化到数据库。每次用户进入短链时自动将短链放入缓存中加快响应速度，而不是都查数据库
+    + <em><strong>图床：</strong></em></p>
+<h2 id="%E6%8A%80%E6%9C%AF%E6%A0%88" tabindex="-1"><a class="header-anchor" href="#%E6%8A%80%E6%9C%AF%E6%A0%88">§</a> 技术栈</h2>
+<p><strong>后端：</strong> mybatisplus、ehcache、springboot</p>
+<p><strong>前端：</strong> vue3、elementui-plus</p>
+<h2 id="%E5%9C%A8%E7%BA%BF%E6%BC%94%E7%A4%BA" tabindex="-1"><a class="header-anchor" href="#%E5%9C%A8%E7%BA%BF%E6%BC%94%E7%A4%BA">§</a> 在线演示</h2>
+<p><a href="http://qq.linruchang.work/lrc-short-chain">个人服务器部署演示</a></p>
+<h2 id="%E7%95%8C%E9%9D%A2" tabindex="-1"><a class="header-anchor" href="#%E7%95%8C%E9%9D%A2">§</a> 界面</h2>
+<h3 id="%E7%9F%AD%E9%93%BE%E7%94%9F%E6%88%90%E5%99%A8" tabindex="-1"><a class="header-anchor" href="#%E7%9F%AD%E9%93%BE%E7%94%9F%E6%88%90%E5%99%A8">§</a> 短链生成器</h3>
+<p><strong>功能首页</strong>
+    <img src="https://img-blog.csdnimg.cn/f8ce02e5f3d1462caad02d3b035e21eb.png" alt="在这里插入图片描述"></p>
+<p><strong>短链生成</strong>
+    <img src="https://img-blog.csdnimg.cn/131fe67363e1406d92330e0c0069d02b.png" alt="在这里插入图片描述"></p>
+<p><strong>合法短链跳转</strong>
+    <a href="http://qq.linruchang.work:8888/830fd28eeb3849608e92c2f13b469ace">上图的短链</a>
+    <img src="https://img-blog.csdnimg.cn/21fa32130078463381cfc1d9eb9f5013.png" alt="在这里插入图片描述"></p>
+<p> 
+    <strong>不合法短链跳转</strong>
+    <a href="http://qq.linruchang.work:8888/830fd28eeb3849608e92c2f13b469acefsadfdsfsdfds">上图的短链</a></p>
+<p><img src="https://img-blog.csdnimg.cn/0ac1bc2f4816457e91bd3170c36cb07c.png" alt="在这里插入图片描述"></p>
+<h3 id="%E5%9B%BE%E5%BA%8A" tabindex="-1"><a class="header-anchor" href="#%E5%9B%BE%E5%BA%8A">§</a> 图床</h3>
+<h2 id="%E9%83%A8%E7%BD%B2" tabindex="-1"><a class="header-anchor" href="#%E9%83%A8%E7%BD%B2">§</a> 部署</h2>
+<h3 id="idea%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95" tabindex="-1"><a class="header-anchor" href="#idea%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95">§</a> IDEA开发调试</h3>
+<blockquote>
+    <p>拉下来代码，刷新Maven库下载好依赖，在直接点击启动即可，打包也是同理（侧边栏按maven的package即可）</p>
+</blockquote>
+<h3 id="%E6%9C%8D%E5%8A%A1%E5%99%A8" tabindex="-1"><a class="header-anchor" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8">§</a> 服务器</h3>
+<p> </p>
+<ol>
+    <li>解压打包好后的zip压缩包</li>
+</ol>
+<pre><code class="language-sh">unzip lrc-short-chain-0.0.1-SNAPSHOT-bin.zip -d lrc-short-chain-0.0.1-SNAPSHOT-bin
+</code></pre>
+<p> 
+    2. 进入解压目录</p>
+<pre><code class="language-sh">cd lrc-short-chain-0.0.1-SNAPSHOT-bin
+</code></pre>
+<p> 
+    3. 执行下面脚本启动部署项目即可</p>
+<pre><code class="language-bash">nohup java -jar lrc-short-chain-0.0.1-SNAPSHOT.jar &gt;nohup.out 2&gt;&amp;1&amp;
+</code></pre>
+<p> 
+    4. Java代码</p>
+<pre><code class="language-java">@AllArgsConstructor
+@Getter
+@ToString
+public enum GenerateCodeTypeEnum {
+
+    JSON2POJO(DictTypeEnum.GenerateCodeType.value, "json2pojo", "json转pojo"),
+    POJO2JSON(DictTypeEnum.GenerateCodeType.value, "pojo2json", "pojo转json（Mock数据）"),
+    POJO2STRUCTURE(DictTypeEnum.GenerateCodeType.value, "pojo2structure", "pojo转structure"),
+
+    CONTENT2QRCODE(DictTypeEnum.GenerateCodeType.value, "content2qrCode", "二维码生成"),
+
+    QRCODE2CONTENT(DictTypeEnum.GenerateCodeType.value, "qrCode2content", "二维码解码");
+
+    /**
+     * 字典的{@link SysDict#getType()}
+     */
+    String dictType;
+
+    /**
+     * 代码生成器类型
+     * 字典的{@link SysDict#getGroupCode}
+     */
+    String type;
+
+    /**
+     * 描述
+     */
+    String desc;
+
+}
+</code></pre>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">序号</th>
+        <th style="text-align:left">国籍</th>
+        <th style="text-align:center">作者</th>
+        <th style="text-align:center">书名</th>
+        <th>已阅日期</th>
+        <th style="text-align:center">感受</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">1</td>
+        <td style="text-align:left">法国</td>
+        <td style="text-align:center">古斯塔夫·勒庞</td>
+        <td style="text-align:center">乌合之众：大众心理研究</td>
+        <td>2020/7/26</td>
+        <td style="text-align:center">垃圾书，网上吹上天了这本书</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">2</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">何崚</td>
+        <td style="text-align:center">阿里巴巴中文站架构设计实践</td>
+        <td>2020/7/26</td>
+        <td style="text-align:center">还行</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">3</td>
+        <td style="text-align:left">日本</td>
+        <td style="text-align:center">矢泽久雄</td>
+        <td style="text-align:center">程序是怎样跑起来的</td>
+        <td>2020/7/30</td>
+        <td style="text-align:center">轻松</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">4</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">李智慧</td>
+        <td style="text-align:center">大型网站技术架构：核心原理与案例分析</td>
+        <td>2020/8/2</td>
+        <td style="text-align:center">还行</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">5</td>
+        <td style="text-align:left">美国</td>
+        <td style="text-align:center">Martin Fowler</td>
+        <td style="text-align:center">重构：改善既有代码的设计</td>
+        <td>2020/8/9</td>
+        <td style="text-align:center">有难度</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">6</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">边芹</td>
+        <td style="text-align:center">被颠覆的文明：我们怎么会落到这一步</td>
+        <td>2020/8/10</td>
+        <td style="text-align:center">触目惊心</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">7</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">边芹</td>
+        <td style="text-align:center">谁在导演世界</td>
+        <td>2020/8/15</td>
+        <td style="text-align:center">触目惊心</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">8</td>
+        <td style="text-align:left">美国</td>
+        <td style="text-align:center">D·Q·麦克伦尼</td>
+        <td style="text-align:center">简单的逻辑学</td>
+        <td>2020/8/16</td>
+        <td style="text-align:center">书如其名，学过初中数学就懂的逻辑</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">9</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">九边</td>
+        <td style="text-align:center">向上生长</td>
+        <td>2020/8/16</td>
+        <td style="text-align:center">讲的通俗易懂，好看，受益匪浅 ，作者也是程序员，它熬的鸡汤还不错，哈哈</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">10</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">阿里官方</td>
+        <td style="text-align:center">Java开发手册-嵩山版</td>
+        <td>2020/8/18</td>
+        <td style="text-align:center">看完，遵守它的编码准则就完事了</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">11</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">文一</td>
+        <td style="text-align:center">伟大的中国工业革命 -“发展政治经济学”一般原理批判纲要</td>
+        <td>2020/9/18</td>
+        <td style="text-align:center">好书，了解中国自从改革开放以后为什么发展那么快</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">12</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">阿里官方</td>
+        <td style="text-align:center">Java开发手册灵魂15问（嵩山版）</td>
+        <td>2020/9/20</td>
+        <td style="text-align:center">好书，通俗易懂</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">13</td>
+        <td style="text-align:left">美国</td>
+        <td style="text-align:center">罗伯特.T.清崎</td>
+        <td style="text-align:center">富爸爸辞职创业前的10堂课</td>
+        <td>2020/10/18</td>
+        <td style="text-align:center">还行，但对我没用，没打算创业，感觉创业也不适合自己，没有商业细胞</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">14</td>
+        <td style="text-align:left">美国</td>
+        <td style="text-align:center">罗伯特.T.清崎</td>
+        <td style="text-align:center">富爸爸，穷爸爸</td>
+        <td>2020/10/23</td>
+        <td style="text-align:center">一般般，反正叫你去炒股就完事</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">15</td>
+        <td style="text-align:left">美国</td>
+        <td style="text-align:center">Ben Forta</td>
+        <td style="text-align:center">正则表达式必知必会</td>
+        <td>2020/10/27</td>
+        <td style="text-align:center">好书，绝对是搞清楚正则的一本书，比网上的任何一份在线文档好</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">16</td>
+        <td style="text-align:left">英国/意大利</td>
+        <td style="text-align:center">拉乌尔-加布里埃尔 • 乌尔玛</td>
+        <td style="text-align:center">Java8实战</td>
+        <td>2020/11/2</td>
+        <td style="text-align:center">好书，系统的学习Java8的新特性，流、函数式编程、CompletedFuture、新日期类等 - 后面的70页象征性的翻一下功力不够理解不了，功力够了再看</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">17</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">王小波</td>
+        <td style="text-align:center">一只特立独行的猪</td>
+        <td>2020/11/6</td>
+        <td style="text-align:center">一般般，很多观点不敢苟同</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">18</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">码猿技术专栏</td>
+        <td style="text-align:center">Mybatis进阶</td>
+        <td>2020/11/9</td>
+        <td style="text-align:center">讲的非常好，不会像其他书上来就是很难懂的设计模式说一波，作者中心思想是直接就叫你一个个断点进行调试，教你看重点核心的代码</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">19</td>
+        <td style="text-align:left">法国</td>
+        <td style="text-align:center">弗雷德里克.皮耶鲁齐</td>
+        <td style="text-align:center">美国陷阱</td>
+        <td>2020/11/9</td>
+        <td style="text-align:center">美国果然世界警察，别国公司贿赂别国的政府人员，以求得到项目开发权，就把该公司的副总裁抓了，牛逼。更气的是法国总统居然还同意收购，说到底还是法国自己活该，情况给此时的华为非常像，扣押人家华为老总女儿做人质，不过呢人家华为的强大并不是收买别国政要官员而强大的</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">20</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">西乔</td>
+        <td style="text-align:center">神秘的程序员们（漫画）</td>
+        <td>2020/11/13</td>
+        <td style="text-align:center">工作累了，看一下漫画作者吐槽程序员的方方面面，一天的疲惫就缓解了一点点</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">21</td>
+        <td style="text-align:left">白俄罗斯</td>
+        <td style="text-align:center">S. A. 阿列克谢耶维奇</td>
+        <td style="text-align:center">二手时间</td>
+        <td>2020/11/22</td>
+        <td style="text-align:center">人们总是记住军事强大的苏联，却不知苏联也有集中营，大清洗，跟文化大革命差不多。苏联分裂，它国内的人互相虐杀，实在是太可怕。希望中国不要走苏联的老路</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">22</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">曹德旺</td>
+        <td style="text-align:center">心若菩提</td>
+        <td>2020/11/25</td>
+        <td style="text-align:center">很佩服这样的企业家，是属于你赚的钱不多拿一分，不贿赂，不贪污，一身正气</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">23</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">许晓斌</td>
+        <td style="text-align:center">Maven实战</td>
+        <td>2020/12/06</td>
+        <td style="text-align:center">书一般，这本书380页左右，其实真正重要的只有前面150页左右+加上后面附录的两页，后面大量的贴代码，讲解插件的使用，插件可以直接一句话告诉有什么作用功能即可，完全不用每个插件花7-8页进行讲解使用，若读者有需求，自行百度使用插件即可，完全不必要写每个插件具体怎么使用 - 建议看到100多页之后直接初略大致看看就好</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">24</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">邓一光</td>
+        <td style="text-align:center">人，或所有的士兵</td>
+        <td>2020/12/22</td>
+        <td style="text-align:center">实体书的话感觉是非常非常的厚，因为我是用电子书看的，40分钟才读2.5%的进度。这本书整体读起来的感觉是一般般，没有什么能让我高潮的情节而且主人公佛系抗日，主人公整天想一些类似人生的意义是什么这一些幼稚的问题。但也从小说中看出国名党真的是百年烂党，背靠老美，富的流水，居然还能让老共夺的天下，抗日结束，不收回香港而是准备反共打内战，真tm无语</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">25</td>
+        <td style="text-align:left">美国</td>
+        <td style="text-align:center">傅高义</td>
+        <td style="text-align:center">邓小平时代</td>
+        <td>2020/12/30</td>
+        <td style="text-align:center">非常非常非常值的看的一本书，可以了解邓小平如何一步一步的进行改革开放。只要军权在手即使退休依然能影响中国的政治。原来中国1989天安门事件，居然有将近20多万学生抗议政府，要求西式民主，最终邓小平不同意学生要求，导致几百人死去，假若政府同意学生要求估计也没有这十几年的快速发展。</td>
+    </tr>
+    <tr>
+        <td style="text-align:center"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:center"></td>
+        <td style="text-align:center"></td>
+        <td></td>
+        <td style="text-align:center"></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">26</td>
+        <td style="text-align:left">中国</td>
+        <td style="text-align:center">魏梦舒</td>
+        <td style="text-align:center">漫画算法：小灰的算法之旅</td>
+        <td>2020/01/10</td>
+        <td style="text-align:center">这本书说实话算法并没有很高深，虽然页数是500多页怪吓人的，但是每个内容都需要至少10页以上的憨憨人物的对话进行填充，所以字数并没有多少，还是非常值的看但不推荐买纸质书，没啥收藏价值，都是非常非常初级的算法书，如果你看懂它的思路并且不敲代码验证，估计需要一个星期应该可以看完。如果按着它提供的思路但不看它提供的代码敲出来，我看了一个月，说明自己敲代码能力有待提升，仍需努力</td>
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <div class="mermaid">
+        graph TD
+        A--&gt;B
+        A--&gt;C
+        B--&gt;D
+        C--&gt;D
+    </div>
+</div>
+
+</body>
+
+</html>

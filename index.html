@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="src/lib/highlight-11.6.0_all-language/styles/atom-one-dark.min.css"/>
+    <style>
+        pre {
+            background-color: #EDF0F0;
+            /*font-family: 'Microsoft YaHei', Menlo;*/
+            font-family: Arial, sans-serif;
+            line-height: 1.5rem;
+            border-radius: 1%;
+            padding: 1rem;
+            overflow-x: scroll;
+            font-weight: bold;
+        }
+    </style>
+    <script src="src/lib/mermaid.js"></script>
+</head>
+<body>
+    <div id="article"></div>
+
+</body>
+
+<script src="src/lib/mdContent.js"></script>
+
+
+<script src="src/lib/highlight-11.6.0_all-language/highlight.min.js"></script>
+
+
+<script src="src/lib/markdown-it.13.0.1.js"></script>
+<script src="dist/markdownItAnchor2.js"></script>
+<script src="dist/markdownItTocDoneRight2.js"></script>
+<!-- <script src="dist/markdown-it-mermaid.js"></script> -->
+<script src="dist/markdown-it-textual-uml.js"></script>
+
+
+<script src="src/lib/jquery-3.6.1.js"></script>
+
+<script>
+
+
+
+    let md = new markdownit({
+        html: true,
+        linkify: true,
+        typographer: true,
+        highlight: function (str, lang) {
+            if (lang && hljs.getLanguage(lang)) {
+                try {
+                    return '<pre class="hljs"><code>' +
+                        hljs.highlight(str, {language: lang, ignoreIllegals: true}).value +
+                        '</code></pre>';
+                } catch (__) {
+                }
+            }
+            return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+        },
+
+    })
+        .use(markdownItAnchor, {permalink: true, permalinkBefore: true, permalinkSymbol: '§'})
+        .use(markdownItTocDoneRight)
+        .use(markdownItTextualUml);
+
+    function mdToHtml(content) {
+        return content ? md.render(content) : null;
+    }
+
+
+    $(function () {
+
+
+
+        console.log(markdownItTextualUml)
+        console.log(markdownItAnchor)
+        console.log(markdownItTocDoneRight)
+
+        //配置
+        mermaid.initialize({startOnLoad:true, theme: 'forest'});
+
+
+        let mdHtml = mdToHtml(mdContent);
+        $("#article").html(mdHtml)
+
+        //重新mermaid渲染
+        $(".mermaid").each(function () {
+            let content = $(this).text();
+            let renderContent = mermaid.render('fdsfds', content)
+            $(this).html(renderContent)
+        })
+
+
+
+
+        setTimeout(function (){
+            console.log('渲染')
+            mermaid.initialize({startOnLoad:true, theme: 'forest'})
+        },2000)
+
+
+        // console.log(mermaid)
+        // mermaid.initialize({startOnLoad:true, theme: 'forest'});
+
+
+
+
+
+        // console.log(mdContent)
+    })
+
+</script>
+
+</html>
