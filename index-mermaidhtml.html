@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+    </script>
+</head>
+
+<body>
+</body>
+<script src="src/lib/mdContentHtml.js"></script>
+<script src="src/lib/mermaid.js"></script>
+<script src="src/lib/jquery-3.6.1.js"></script>
+<script>
+
+    $(function () {
+        //配置
+        mermaid.initialize({startOnLoad:true, theme: 'forest'});
+        let newMdContentHtml = $(mdContentHtml).find(".mermaid").each(function(mermaidIndex) {
+            let content = $(this).text();
+            let renderContent = mermaid.render('mermaid' + mermaidIndex, content)
+            $(this).html(renderContent)
+        }).end().html()
+
+        $("body").html(newMdContentHtml)
+
+    })
+
+</script>
+
+
+</html>

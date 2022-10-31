@@ -16,7 +16,7 @@
             font-weight: bold;
         }
     </style>
-    <script src="src/lib/mermaid.js"></script>
+
 </head>
 <body>
     <div id="article"></div>
@@ -30,10 +30,11 @@
 
 
 <script src="src/lib/markdown-it.13.0.1.js"></script>
-<script src="dist/markdownItAnchor2.js"></script>
-<script src="dist/markdownItTocDoneRight2.js"></script>
-<!-- <script src="dist/markdown-it-mermaid.js"></script> -->
+<script src="dist/markdownItAnchor.js"></script>
+<script src="dist/markdownItTocDoneRight.js"></script>
 <script src="dist/markdown-it-textual-uml.js"></script>
+<script src="dist/markdown-it-code-copy.js"></script>
+<script src="src/lib/mermaid.js"></script>
 
 
 <script src="src/lib/jquery-3.6.1.js"></script>
@@ -61,7 +62,8 @@
     })
         .use(markdownItAnchor, {permalink: true, permalinkBefore: true, permalinkSymbol: '§'})
         .use(markdownItTocDoneRight)
-        .use(markdownItTextualUml);
+        .use(markdownItTextualUml)
+        .use(markdownItCodeCopy);
 
     function mdToHtml(content) {
         return content ? md.render(content) : null;
@@ -84,9 +86,9 @@
         $("#article").html(mdHtml)
 
         //重新mermaid渲染
-        $(".mermaid").each(function () {
+        $(".mermaid").each(function (mermaidIndex) {
             let content = $(this).text();
-            let renderContent = mermaid.render('fdsfds', content)
+            let renderContent = mermaid.render('mermaid' + mermaidIndex, content)
             $(this).html(renderContent)
         })
 
