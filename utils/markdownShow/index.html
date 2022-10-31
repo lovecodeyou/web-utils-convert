@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/highlight-11.6.0_all-language/styles/atom-one-dark.min.css" />
+    <script src="libs/highlight-11.6.0_all-language/highlight.min.js"></script>
+
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/layer/layer.js"></script>
+
+
+    <style>
+
+        :root {
+
+            --articleDetailPage-margintop: 5%;
+            --articleDetailPage-margin: var(--articleDetailPage-margintop) auto;
+            --articleDetailPage-marginright: 3%;
+
+
+            --default-a-color: inherit;
+            --default-a-clicked-color: rgb(0, 127, 255);
+            --default-a-hover-color: red;
+            --default-a-hover-backgroundcolor: #DEDEE5;
+            --default-a-lineheight: 2rem;
+        }
+
+        ol,ul {
+            list-style-type: none
+        }
+        a {
+            text-decoration:none;
+            color: var(--default-a-color);
+            line-height: var(--default-a-lineheight);
+        }
+        a:visited {
+            color: var(--default-a-color);
+        }
+        a:hover  {
+            color: var(--default-a-hover-color) !important;
+            background: var(--default-a-hover-backgroundcolor);
+        }
+
+        .article-content {
+            width: 60%;
+            box-shadow: 0px 0px 12px rgb(0 0 0 / 12%);
+            margin: var(--articleDetailPage-margintop) auto;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="article-content"></div>
+</body>
+
+
+<script src="libs/markdown-it/markdown-it.13.0.1.js"></script>
+<script src="libs/markdown-it/markdownItAnchor.js"></script>
+<script src="libs/markdown-it/markdownItTocDoneRight.js"></script>
+<script src="libs/markdown-it/markdown-it-textual-uml.js"></script>
+<!-- 特别注意这个不要放在head里面加载，否则代码复制不了，别问为什么，我也不知道，其他的都放在head里面应该没啥问题 -->
+<script src="libs/markdown-it/markdown-it-code-copy.js"></script>
+<script src="libs/markdown-it/markdown-it-emoji.js"></script>
+<script src="libs/markdown-it/mermaid.js"></script>
+
+<script src="js/markdownContentData.js"></script>
+<script src="js/markdownUtils.js"></script>
+<script>
+
+    $(function () {
+        //假设从后端拿到的markdown内容数据
+        let currentMarkdownContentData = markdownContentData;
+
+        console.log('markdown内容',currentMarkdownContentData)
+
+        let currentMarkdownContentDataHtml = mdToHtml2(currentMarkdownContentData);
+
+        console.log('渲染后的markdown内容',currentMarkdownContentDataHtml)
+
+        $(".article-content").html(currentMarkdownContentDataHtml)
+    })
+
+
+</script>
+
+</html>
